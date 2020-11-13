@@ -39,6 +39,6 @@ trait EndpointPartition extends Partition {
 case class CassandraPartition[V, T <: Token[V]](
   index: Int,
   endpoints: Iterable[InetAddress],
-  tokenRanges: Iterable[CqlTokenRange[V, T]],
+  tokenRanges: Array[CqlTokenRange[V, T]],
   dataSize: Long) extends EndpointPartition
 
