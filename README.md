@@ -1,5 +1,7 @@
 # Spark Cassandra Connector [![Build Status](https://travis-ci.org/datastax/spark-cassandra-connector.svg)](https://travis-ci.org/datastax/spark-cassandra-connector)
 
+This is a fork of the Spark Cassandra Connector that uses the Scylla client. The latest Spark connector that can be used is 2.5.1. 2.5.2 depends on classes that aren't in the Scylla client as of 4.9.0-scylla1.
+
 ## Quick Links
 
 | What       | Where |
@@ -163,6 +165,7 @@ To run unit and integration tests:
     ./sbt/sbt it:test
 
 By default, integration tests start up a separate, single Cassandra instance and run Spark in local mode.
+This requires [CCM](https://github.com/riptano/ccm).
 It is possible to run integration tests with your own Cassandra and/or Spark cluster.
 First, prepare a jar with testing code:
 

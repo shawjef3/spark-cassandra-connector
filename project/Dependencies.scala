@@ -30,7 +30,7 @@ object Dependencies
       .exclude("org.slf4j", "log4j-over-slf4j")
 
     def driverCoreExclude(): ModuleID = module
-      .exclude("com.datastax.oss", "java-driver-core") // doesn't shade guava
+      .exclude("com.scylladb", "java-driver-core") // doesn't shade guava
       .exclude("org.apache.tinkerpop", "*")
       // until SPARK-20075 is fixed we fallback to java workarounds for native calls
       .exclude("com.github.jnr", "jnr-posix")
@@ -41,7 +41,7 @@ object Dependencies
     val junit = "junit" % "junit" % JUnit
     val junitInterface = "com.novocode" % "junit-interface" % JUnitInterface
     val scalaTest = "org.scalatest" %% "scalatest" % ScalaTest
-    val driverMapperProcessor = "com.datastax.oss" % "java-driver-mapper-processor" % DataStaxJavaDriver
+    val driverMapperProcessor = "com.scylladb" % "java-driver-mapper-processor" % DataStaxJavaDriver
   }
 
   object TestConnector {
@@ -72,8 +72,8 @@ object Dependencies
   }
 
   object Driver {
-    val driverCore = "com.datastax.oss" % "java-driver-core-shaded" % DataStaxJavaDriver driverCoreExclude()
-    val driverMapper = "com.datastax.oss" % "java-driver-mapper-runtime" % DataStaxJavaDriver driverCoreExclude()
+    val driverCore = "com.scylladb" % "java-driver-core-shaded" % DataStaxJavaDriver driverCoreExclude()
+    val driverMapper = "com.scylladb" % "java-driver-mapper-runtime" % DataStaxJavaDriver driverCoreExclude()
 
     val commonsLang3 = "org.apache.commons" % "commons-lang3" % Versions.CommonsLang3
     val paranamer = "com.thoughtworks.paranamer" % "paranamer" % Versions.Paranamer
