@@ -84,7 +84,7 @@ This project has also been published to the Maven Central Repository.
 For SBT to download the connector binaries, sources and javadoc, put this in your project
 SBT config:
 
-    libraryDependencies += "com.datastax.spark" %% "spark-cassandra-connector" % "2.5.1"
+    libraryDependencies += "com.rocketfuel.scylladb" %% "spark-cassandra-connector" % "2.5.1-scylla-1"
 
 * The default Scala version for Spark 2.0+ is 2.11 please choose the appropriate build. See the
 [FAQ](doc/FAQ.md) for more information

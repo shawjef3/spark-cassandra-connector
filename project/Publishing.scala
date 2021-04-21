@@ -9,9 +9,7 @@ import scala.sys.process._
 
 object Publishing extends sbt.librarymanagement.DependencyBuilders {
 
-  val Version: String = {
-    sys.props.get("publish.version").getOrElse("git describe --tags" !!).stripLineEnd.stripPrefix("v")
-  }
+  val Version: String = "2.5.1-scylla-1"
 
   val altReleaseDeploymentRepository = sys.props.get("publish.repository.name")
   val altReleaseDeploymentLocation = sys.props.get("publish.repository.location")
